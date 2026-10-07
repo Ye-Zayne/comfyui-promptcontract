@@ -1,0 +1,12 @@
+{
+  "prompt": {
+    "1": {
+      "class_type": "PromptContractInspect",
+      "inputs": {
+        "template": "A {{subject}} in {{style}} style, {{count}} objects.",
+        "values_json": "{\"subject\":\"纸鹤\",\"style\":\"ink\",\"count\":0}",
+        "contract_json": "{\"subject\":{\"type\":\"string\",\"max_length\":120},\"style\":{\"type\":\"string\",\"choices\":[\"ink\",\"photo\"]},\"count\":{\"type\":\"integer\",\"minimum\":0,\"maximum\":10}}"
+      }
+    }
+  }
+}

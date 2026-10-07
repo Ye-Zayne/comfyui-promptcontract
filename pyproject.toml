@@ -1,0 +1,21 @@
+[project]
+name = "comfyui-promptcontract"
+version = "0.1.0"
+description = "Strict prompt-template input contracts with bounded JSON validation and deterministic one-pass rendering."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+authors = [{name = "A ad钙"}]
+dependencies = []
+
+[project.urls]
+Repository = "https://github.com/Ye-Zayne/comfyui-promptcontract"
+"Bug Tracker" = "https://github.com/Ye-Zayne/comfyui-promptcontract/issues"
+
+[tool.comfy]
+PublisherId = "ye-zayne"
+DisplayName = "PromptContract"
+
+[tool.pytest.ini_options]
+addopts = "--import-mode=importlib"
+testpaths = ["tests"]

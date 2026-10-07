@@ -1,0 +1,17 @@
+{
+  "11": {
+    "class_type": "PromptContractRender",
+    "inputs": {
+      "template": "A {{subject}} in {{style}} style.",
+      "values_json": "{\"subject\":\"纸鹤\",\"style\":\"ink\"}",
+      "contract_json": "{\"subject\":{\"type\":\"string\"},\"style\":{\"type\":\"string\",\"choices\":[\"ink\",\"photo\"]}}"
+    }
+  },
+  "12": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "text": ["11", 0],
+      "clip": ["1", 1]
+    }
+  }
+}
