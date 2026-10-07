@@ -164,7 +164,11 @@ def test_placeholder_and_key_counts_are_bounded(core):
 def test_deep_json_does_not_escape_inspection(core):
     text = '{"s":' + "[" * 1200 + "0" + "]" * 1200 + "}"
     result = core.evaluate("{{s}}", text, '{"s":{"type":"string"}}')
-    assert "invalid_json" in codes(result)
+    # Python builds differ in JSON parser depth. Both supported outcomes must
+    # remain inside Inspect and reject this unsupported nested-array value.
+    assert codes(result) & {"invalid_json", "type_mismatch"}
+    assert not result.valid
+    assert json.loads(result.report_json())["valid"] is False
 
 
 def test_empty_prompt_fails_but_literal_prompt_needs_no_slots(core):
